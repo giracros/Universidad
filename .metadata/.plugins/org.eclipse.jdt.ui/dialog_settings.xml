@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
+	<item value="true" key="SortMembers.sort_all"/>
 	<section name="org.eclipse.jdt.internal.ui.packageview.PackageExplorerPart">
 		<item value="2" key="layout"/>
 		<item value="true" key="group_libraries"/>
@@ -7,7 +8,23 @@
 		<item value="1" key="rootMode"/>
 		<item value="false" key="linkWithEditor"/>
 	</section>
+	<section name="NewClassWizardPage">
+		<item value="false" key="create_constructor"/>
+		<item value="true" key="create_unimplemented"/>
+	</section>
+	<section name="OptionalMessageDialog.hide.">
+		<item value="true" key="org.eclipse.jdt.ui.typecomment.deprecated"/>
+		<item value="true" key="SortMembersMessageDialog.optionalDialog.id"/>
+	</section>
 	<section name="quick_assist_proposal_size">
+	</section>
+	<section name="nls_accessor_history">
+		<section name="0">
+			<item value="Messages" key="accessorName"/>
+			<item value="=analizador_lexico/src&lt;analizador_lexico" key="bundlePackage"/>
+			<item value="messages.properties" key="bundleName"/>
+			<item value="=analizador_lexico/src&lt;analizador_lexico" key="accessorPackage"/>
+		</section>
 	</section>
 	<section name="completion_proposal_size">
 	</section>
