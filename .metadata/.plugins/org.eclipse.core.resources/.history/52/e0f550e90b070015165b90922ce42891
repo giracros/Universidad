@@ -1,0 +1,60 @@
+package compila;
+
+import AnalizadorOriginal;
+
+public class metodos {
+	
+	public static void replaceR(String l1, String l2, String opci) 
+	{
+		if (!opci.equals("")) 
+		{
+			pila = pila.charAt(0) + l1 + l2 + opci;
+		} 
+		else if (l2.equals("")) 
+		{
+			pila = pila.substring(0, pila.length() - 1) + l1;
+			// pila = pila.charAt(0)+l1;
+		}
+		else 
+		{
+			pila = pila.substring(0, pila.length() - 1) + l1 + l2;
+		}
+		k--;
+		System.out.println(pila);
+		//JOptionPane.showMessageDialog(null, pila);
+	}
+
+	public static void replaceA(String l1, String l2) 
+	{
+		pila = pila.substring(0, pila.length() - 1) + l1 + l2;
+		System.out.println(pila);
+		//JOptionPane.showMessageDialog(null, pila);
+	}
+
+	public static void desapileR() 
+	{
+		pila = pila.substring(0, pila.length() - 1);
+		k--;
+		System.out.println(pila);
+		//JOptionPane.showMessageDialog(null, pila);
+	}
+
+	public static void desapileA() 
+	{
+		pila = pila.substring(0, pila.length() - 1);
+		System.out.println(pila);
+		//JOptionPane.showMessageDialog(null, pila);
+	}
+
+	public static void error(String cadena) 
+	{
+		System.out.println(cadena + " = Rechazo");
+		//JOptionPane.showMessageDialog(null, cadena + " = RECHAZO");
+	}
+
+	public static void aceptacion(String cadena) 
+	{
+		System.out.println(cadena + " = Aceptacion");
+		//JOptionPane.showMessageDialog(null, cadena + " = ACEPTACION");
+	}
+}
