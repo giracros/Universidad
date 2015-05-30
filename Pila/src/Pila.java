@@ -78,6 +78,7 @@ public class Pila extends JFrame {
 		btnDeterminar.setFont(new Font("Arial Unicode MS", Font.PLAIN, 15));
 		btnDeterminar.setBounds(10, 157, 212, 23);
 		btnDeterminar.addActionListener(new ActionListener() {
+			
 			public void actionPerformed(ActionEvent arg0) {
 				
 		    	while(Pila.pila.size()>0){

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;compila.metodos&apos; to &apos;Metodos&apos;&#x0A;- Original project: &apos;Compiladores2015&apos;&#x0A;- Original element: &apos;compila.metodos&apos;&#x0A;- Renamed element: &apos;compila.Metodos&apos;&#x0A;- Update references to refactored element&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;metodos&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;compila{metodos.java[metodos" matchStrategy="1" name="Metodos" qualified="false" references="true" similarDeclarations="false" stamp="1433023774416" textual="false" version="1.0"/>
+</session>
