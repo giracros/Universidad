@@ -13,19 +13,11 @@ public class metodos {
 
 	public static void anuar() throws IOException {
 
-		// entrada de datos//
-		Scanner entrada = new Scanner(System.in);
-		InputStreamReader isr = new InputStreamReader(System.in);
-		BufferedReader br = new BufferedReader(isr);
 		// ------------- //
-		String cadena = ""; // cadena que se ingresa para validar
-		String[] spl; // valida que haya identificador variables Iv (se ve mas
-						// adelante)
-		String l1 = ""; // guarda los tokens de la cadena para validarlo con los
-						// simbolos de la pila
-		// JOptionPane.showInputDialog("Ingrese la cadena");
-		System.out.println("Ingrese la cadena");
-		cadena = br.readLine(); // captura la cadena
+		String[] spl; 
+		String l1 = "";
+		String cadena=cosas.frm.getTxtIngresar().getText();
+		int tamano=cadena.length();
 		cadena = cadena.substring(0).replace(" ", ""); // quita los espacios que
 														// hay entre la cadena
 		spl = cadena.split("="); // separa la cadena cuando encuentre el primero
@@ -33,7 +25,7 @@ public class metodos {
 		// valida que si haya identificador variables en caso de que el tamaño
 		// del vector spl sea menor que 2 quiere decir que no hay igual (=)//
 		if (spl.length < 2) {
-			System.out.println(cadena + " --------> RECHAZO");
+			cosas.frm.getTxtDato().setText("Rechazo");
 			return;
 		} else {
 			// ----------------------------------------------------------------------------------------------------------------------------------
@@ -304,16 +296,7 @@ public class metodos {
 		// System.out.println(pila);
 		JOptionPane.showMessageDialog(null, pila);
 	}
-
-	public static void aceptacion(String cadena) {
-		cosas.frm.getTxtDato().setText("Aceptacion");
-	}
-
-	public static void error(String cadena) {
-		// System.out.println(cadena + " = R");
-		JOptionPane.showMessageDialog(null, cadena + " = RECHAZO");
-	}
-
+	
 	public static void replaceR(String l1, String l2, String opci) {
 		if (!opci.equals("")) {
 			pila = pila.charAt(0) + l1 + l2 + opci;
@@ -327,5 +310,13 @@ public class metodos {
 		// JOptionPane.showMessageDialog(null, "hola");
 		// System.out.println(pila);
 		JOptionPane.showMessageDialog(null, pila);
+	}
+	
+	public static void aceptacion(String cadena) {
+		cosas.frm.getTxtDato().setText("Aceptacion");
+	}
+
+	public static void error(String cadena) {
+		cosas.frm.getTxtDato().setText("Rechazo");
 	}
 }

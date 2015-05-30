@@ -4,18 +4,21 @@ import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
-
 import javax.swing.JButton;
 import javax.swing.JFrame;
-import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
 public class frm extends JFrame {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -5873654377244570265L;
 	private JPanel contentPane;
 	private static JTextField txtDato;
+	private static JTextField txtIngresar;
 
 	/**
 	 * Launch the application.
@@ -39,7 +42,7 @@ public class frm extends JFrame {
 	 */
 	public frm() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 304, 117);
+		setBounds(100, 100, 304, 177);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -59,17 +62,18 @@ public class frm extends JFrame {
 
 			}
 		});
-		btnValidar.setBounds(175, 7, 123, 27);
+		btnValidar.setBounds(94, 122, 123, 27);
 		contentPane.add(btnValidar);
 
 		setTxtDato(new JTextField());
 		getTxtDato().setBounds(6, 5, 163, 28);
 		contentPane.add(getTxtDato());
 		getTxtDato().setColumns(10);
-
-		JLabel lblMensaje = new JLabel("Mensaje");
-		lblMensaje.setBounds(16, 46, 282, 22);
-		contentPane.add(lblMensaje);
+		
+		setTxtIngresar(new JTextField());
+		getTxtIngresar().setBounds(6, 80, 292, 28);
+		contentPane.add(getTxtIngresar());
+		getTxtIngresar().setColumns(10);
 	}
 
 	public static JTextField getTxtDato() {
@@ -78,5 +82,13 @@ public class frm extends JFrame {
 
 	public void setTxtDato(JTextField txtDato) {
 		frm.txtDato = txtDato;
+	}
+
+	public static JTextField getTxtIngresar() {
+		return txtIngresar;
+	}
+
+	public void setTxtIngresar(JTextField txtIngresar) {
+		this.txtIngresar = txtIngresar;
 	}
 }
