@@ -1,7 +1,7 @@
 package compila;
 
 
-public class metodos {
+public class Metodos {
 	
 
 	public static void replaceR(String l1, String l2, String opci) 

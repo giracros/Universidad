@@ -72,272 +72,131 @@ public class AnalizadorOriginal {
 			
 // ----------------------------------------------------------------------------------------------------------------------------------//
 			
-			// ciclo para validar la cadena ingresada con los simbolos de la pila y simbolos de entrada//
-			while (k < cadena.length()) { // mientras que k sea menor que el tamaño de la cadena...
-
-				l1 = "" + cadena.charAt(k); // guardamos cada token de la cadena
+			while (k < cadena.length()) {
+				
+				l1 = "" + cadena.charAt(k);
 				
 				if (pila.substring(pila.length() - 1).equalsIgnoreCase("S")) 
-				{compila.metodos.replaceR("D", "=", "I");} 
+				{compila.Metodos.replaceR("D", "=", "I");} 
 				
 				else if (pila.substring(pila.length() - 1).equalsIgnoreCase("I")) 
-				{compila.metodos.desapileA();}
+				{compila.Metodos.desapileA();}
 				
 				
 				else if (pila.substring(pila.length() - 1).equalsIgnoreCase("D")) 	
 				{
-					if 		(l1.equals("=")) {compila.metodos.error(cadena);return;}
-					else if (l1.equals("+")) {compila.metodos.error(cadena);return;}
-					else if (l1.equals("-")) {compila.metodos.error(cadena);return;}
-					else if (l1.equals("*")) {compila.metodos.error(cadena);return;} 
-					else if (l1.equals("/")) {compila.metodos.error(cadena);return;} 
-					else if (l1.equals(")")) {compila.metodos.error(cadena);return;}
-					else if (l1.equals("¬")) {compila.metodos.error(cadena);return;}
-					// Si ninguna de las anteriores validaciones fue correcta, reemplazamoos el tope de la pila por VT (ɅVT)
-					else {compila.metodos.replaceR("V", "T", "");}
+					if (l1.equals("=")) {compila.Metodos.error(cadena);return;}
+					else if (l1.equals("+")) {compila.Metodos.error(cadena);return;}
+					else if (l1.equals("-")) {compila.Metodos.error(cadena);return;}
+					else if (l1.equals("*")) {compila.Metodos.error(cadena);return;} 
+					else if (l1.equals("/")) {compila.Metodos.error(cadena);return;} 
+					else if (l1.equals(")")) {compila.Metodos.error(cadena);return;}
+					else if (l1.equals("¬")) {compila.Metodos.error(cadena);return;}
+					else {compila.Metodos.replaceR("V", "T", "");}
 				} 
 				
 				
 				else if (pila.substring(pila.length() - 1).equalsIgnoreCase("V")) 
-				{ // preguntamos si el simbolo de la pila en que estamos es V Si es alguno de los siguientes simbolos nos dira que la cadena es de rechazo //
-					if (l1.equals("=")) {
-						compila.metodos.error(cadena);
-						return;
-					} else if (l1.equals("*")) {
-						compila.metodos.error(cadena);
-						return;
-					} else if (l1.equals("/")) {
-						compila.metodos.error(cadena);
-						return;
-					} else if (l1.equals("(")) {
-						compila.metodos.error(cadena);
-						return;
-		
-						
-					} else if (l1.equals("+")) 
-					{ // Si el simbolo que viene es +
-						compila.metodos.replaceA("V", "T"); // Se reemplaza el tope de la pila por VT y avanza (ɅVT)
-					} else if (l1.equals("-")) 
-					{ // Si el simbolo que viene es -
-						compila.metodos.replaceA("V", "T"); // Se reemplaza el tope de la pila por VT y avanza (ɅVT)
-					} else if (l1.equals(")")) 
-					{ // Si el simbolo que viene es )
-						compila.metodos.desapileR(); // Desapilla el tope y retiene (ɅV)
-					} else if (l1.equals("¬")) 
-					{ // Si el simbolo que viene es ¬
-						compila.metodos.desapileR(); // Desapilla el tope y retiene (ɅV)
-					}
-					
+				{ 
+					if (l1.equals("=")) {compila.Metodos.error(cadena);return;} 
+					else if (l1.equals("*")) {compila.Metodos.error(cadena);return;}
+					else if (l1.equals("/")) {compila.Metodos.error(cadena);return;}
+					else if (l1.equals("(")) {compila.Metodos.error(cadena);return;}
+					else if (l1.equals("+")) {compila.Metodos.replaceA("V", "T");}
+					else if (l1.equals("-")) {compila.Metodos.replaceA("V", "T");}
+					else if (l1.equals(")")) {compila.Metodos.desapileR();} 
+					else if (l1.equals("¬")) {compila.Metodos.desapileR();}
 				} 
 				
 				
 				else if (pila.substring(pila.length() - 1).equalsIgnoreCase("T")) 
 					
-				{ // preguntamos si el simbolo de la pila en que estamos es T
-					// Si es alguno de los siguientes simbolos nos dira que la cadena es de rechazo //
-					
-					if (l1.equals("=")) 
-					{
-						compila.metodos.error(cadena);
-						return;
-					} else if (l1.equals("+")) 
-					{
-						compila.metodos.error(cadena);
-						return;
-					} else if (l1.equals("-")) 
-					{
-						compila.metodos.error(cadena);
-						return;
-					} else if (l1.equals("*"))
-					{
-						compila.metodos.error(cadena);
-						return;
-					} else if (l1.equals("/")) 
-					{
-						compila.metodos.error(cadena);
-						return;
-					} else if (l1.equals(")")) 
-					{
-						compila.metodos.error(cadena);
-						return;
-					} else if (l1.equals("¬")) 
-					
-					{
-						compila.metodos.error(cadena);
-						return;
-						
-						// ---------------------------------------------------------------------------//
-					} 
-					
-					else 
-					
-					{
-						compila.metodos.replaceR("Q", "P", ""); // Se reemplaza el tope de la pila por VT y retiene (ɅVQP)
-					}
+				{	
+					if (l1.equals("=")) {compila.Metodos.error(cadena);	return;}
+					else if (l1.equals("+")) {compila.Metodos.error(cadena);return;}
+					else if (l1.equals("-")) {compila.Metodos.error(cadena);return;}
+					else if (l1.equals("*")) {compila.Metodos.error(cadena);return;} 
+					else if (l1.equals("/")) {compila.Metodos.error(cadena);return;}
+					else if (l1.equals(")")) {compila.Metodos.error(cadena);return;}
+					else if (l1.equals("¬")) {compila.Metodos.error(cadena);return;} 
+					else {compila.Metodos.replaceR("Q", "P", "");}
 				} 
-				
-				
 				
 				else if (pila.substring(pila.length() - 1).equalsIgnoreCase("P")) 
 				
-				{ // preguntamos si el simbolo de la pila en que estamos es P
-					// Si es alguno de los siguientes simbolos nos dira que la cadena es de rechazo //
-					if (l1.equals("=")) {
-						compila.metodos.error(cadena);
-						return;
-					} 
-					
-					else if (l1.equals("+")) {
-						compila.metodos.error(cadena);
-						return;
-					} 
-					
-					else if (l1.equals("-")) {
-						compila.metodos.error(cadena);
-						return;
-					} 
-					
-					else if (l1.equals("*")) {
-						compila.metodos.error(cadena);
-						return;
-					} 
-					
-					else if (l1.equals("/")) {
-						compila.metodos.error(cadena);
-						return;
-					} 
-					
-					else if (l1.equals(")")) {
-						compila.metodos.error(cadena);
-						return;
-					} 
-					
-					else if (l1.equals("¬")) {
-						compila.metodos.error(cadena);
-						return;
-						
-						// ---------------------------------------------------------------------------//
-					} 
-					
-					else
-					
-					{
-						compila.metodos.replaceR("Y", "", ""); // Se reemplaza el tope de la pila por Y (en la notas es II yo lo llame Y para mejor manejo) y retiene (ɅVQY) ||(ɅVQII)
-					}
+				{
+					if (l1.equals("=")) {compila.Metodos.error(cadena);return;} 
+					else if (l1.equals("+")) {compila.Metodos.error(cadena);return;} 
+					else if (l1.equals("-")) {compila.Metodos.error(cadena);return;} 
+					else if (l1.equals("*")) {compila.Metodos.error(cadena);return;} 
+					else if (l1.equals("/")) {compila.Metodos.error(cadena);return;} 
+					else if (l1.equals(")")) {compila.Metodos.error(cadena);return;} 
+					else if (l1.equals("¬")) {compila.Metodos.error(cadena);return;} 
+					else{compila.Metodos.replaceR("Y", "", "");}
 				}
-				
-				
 				
 				else if (pila.substring(pila.length() - 1).equalsIgnoreCase("Q")) 
 				
-				{ // preguntamos si el simbolo de la pila en que estamos es Q
-					
-					if (l1.equals("*")) 
-					{ // Si el simbolo que viene es *
-						compila.metodos.replaceA("Q", "P"); // Se reemplaza el tope de la pila por QP y avanza (ɅVQP)
-					} 
-					
-					else if (l1.equals("/")) 
-					
-					{ // Si el simbolo que viene es /
-						compila.metodos.replaceA("Q", "P"); // Se reemplaza el tope de la pila por QP y avanza (ɅVQP)
-					} 
-					
-					else if (l1.equals("+")) 
-					
-					{ // Si el simbolo que viene es +
-						compila.metodos.desapileR(); // Se desapila el tope y retiene
-					} 
-					
-					else if (l1.equals("-")) 
-					
-					{ // Si el simbolo que viene es -
-						compila.metodos.desapileR(); // Se desapila el tope y retiene
-					} 
-					
-					else if (l1.equals(")")) 
-					
-					{ // Si el simbolo que viene es )
-						compila.metodos.desapileR(); // Se desapila el tope y retiene
-					}
-					
-					else if (l1.equals("¬")) 
-					
-					{ // Si el simbolo que viene es ¬
-						compila.metodos.desapileR(); // Se desapila el tope y retiene
-					}
-					
-					else 
-					
-					{
-						compila.metodos.error(cadena); // Si no es ninguna de la validaciones anteriores es error
-						return;
-					}
+				{	
+					if (l1.equals("*")) { compila.Metodos.replaceA("Q", "P");} 
+					else if (l1.equals("/")) {compila.Metodos.replaceA("Q", "P");} 
+					else if (l1.equals("+")) {compila.Metodos.desapileR();} 
+					else if (l1.equals("-")) {compila.Metodos.desapileR();}
+					else if (l1.equals(")")) {compila.Metodos.desapileR();}
+					else if (l1.equals("¬")) {compila.Metodos.desapileR();}
+					else {compila.Metodos.error(cadena);return;}
 				} 
-				
-				
 				
 				else if (pila.substring(pila.length() - 1).equalsIgnoreCase("Y")) 
 				{ 
-					if (l1.equals("(")) {compila.metodos.replaceA(")", "D");}
-					else if (l1.equals("=")) {compila.metodos.error(cadena);return;}
-					else if (l1.equals("+")) {compila.metodos.error(cadena);return;}
-					else if (l1.equals("-")) {compila.metodos.error(cadena);return;}
-					else if (l1.equals("*")) {compila.metodos.error(cadena);return;} 
-					else if (l1.equals("/")) {compila.metodos.error(cadena);return;} 
-					else if (l1.equals(")")) {compila.metodos.error(cadena);return;} 
-					else if (l1.equals("¬")) {compila.metodos.error(cadena);return;} 
-					// si no es ninguna de las validaciones anteriores desapila el tope y avanza (ɅVQ))
-					else{compila.metodos.desapileA();}
+					if 		(l1.equals("(")) {compila.Metodos.replaceA(")", "D");}
+					else if (l1.equals("=")) {compila.Metodos.error(cadena);return;}
+					else if (l1.equals("+")) {compila.Metodos.error(cadena);return;}
+					else if (l1.equals("-")) {compila.Metodos.error(cadena);return;}
+					else if (l1.equals("*")) {compila.Metodos.error(cadena);return;} 
+					else if (l1.equals("/")) {compila.Metodos.error(cadena);return;} 
+					else if (l1.equals(")")) {compila.Metodos.error(cadena);return;} 
+					else if (l1.equals("¬")) {compila.Metodos.error(cadena);return;} 
+					else {compila.Metodos.desapileA();}
 				} 
 		
 				
-				else if 
+				else if (pila.substring(pila.length() - 1).equalsIgnoreCase("="))
 				
-				(pila.substring(pila.length() - 1).equalsIgnoreCase("="))
-				
-				{ // preguntamos si el simbolo de la pila en que estamos es =
-					if (l1.equals("=")) 
-					
-					{// Si el simbolo que viene en =
-						compila.metodos.desapileA(); // Desapile el tope y avance (ɅVQ)
-					} 
-					
-					else 
-					
-					{
-						compila.metodos.error(cadena);// si no es igual (=) debe mandar un error diciendo que la cadena es de rechazo
-						return;
-					}
+				{
+					if (l1.equals("=")) {compila.Metodos.desapileA();} 
+					else {compila.Metodos.error(cadena);return;}
 				} 
 				
 				
 				
 				else if (pila.substring(pila.length() - 1).equalsIgnoreCase(")")) 
 				
-				{ // preguntamos si el simbolo de la pila en que estamos es )
+				{ 
 					
 					if (l1.equals(")")) 
-					{ // Si el simbolo que viene es )
-						compila.metodos.desapileA(); // Desapila el tope y avanza (ɅV)
+					{ 
+						compila.Metodos.desapileA(); 
 					} 
 					else 
 					{
-						compila.metodos.error(cadena); // si no es parentesis ()) debe mandar un error diciendo que la cadena es de rechazo
+						compila.Metodos.error(cadena); 
 						return;
 					}
 				}
 				
-				k++; // variable para aumentar el ciclo de la cadena
+				k++;
+			
 			}
+			
 			// --------------------------------------------------------------------------------//
 			
 			if (pila.length() < 2) 
 			{
-				compila.metodos.aceptacion(cadena);
+				compila.Metodos.aceptacion(cadena);
 			} else 
 			{
-				compila.metodos.error(cadena);
+				compila.Metodos.error(cadena);
 			}
 		}
 		
