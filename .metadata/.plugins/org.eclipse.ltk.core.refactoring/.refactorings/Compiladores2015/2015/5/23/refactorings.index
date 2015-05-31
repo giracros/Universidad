@@ -1,1 +1,6 @@
 1433108046298	Rename package 'compila'
+1433110186546	Rename local variable 'opci'
+1433112388377	Encapsulate field 'txtResultado'
+1433112727997	Encapsulate field 'txtPasos'
+1433113590277	Encapsulate field 'txtValidar'
+1433113738316	Delete element
