@@ -1,2 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<qualifiedTypeNameHistroy/>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="compila.metodos"/>
+<fullyQualifiedTypeName name="compila.AnalizadorOriginal"/>
+<fullyQualifiedTypeName name="javax.swing.JOptionPane"/>
+<fullyQualifiedTypeName name="cosas.metodos"/>
+<fullyQualifiedTypeName name="cosas.frm"/>
+<fullyQualifiedTypeName name="compila.Metodos"/>
+</qualifiedTypeNameHistroy>
