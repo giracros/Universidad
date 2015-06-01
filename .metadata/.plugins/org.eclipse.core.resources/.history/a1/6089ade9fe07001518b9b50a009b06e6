@@ -9,7 +9,11 @@ public class Funcionalidad {
 	
 	public static String pila = "ɅS";
 	
-
+	public static void aceptacion(String cadena) 
+	{
+		compiladores.FrmMenu.getTxtResultado().setText("Aceptacion");
+	}
+	
 	public static void analizador() throws IOException{
 		
 		String[] spl;
@@ -145,11 +149,6 @@ public class Funcionalidad {
 		compiladores.FrmMenu.getTxtPasos().setText(pila);
 	}
 
-	public static void aceptacion(String cadena) 
-	{
-		compiladores.FrmMenu.getTxtResultado().setText("Aceptacion");
-	}
-	
 	public static void desapileR() 
 	{
 		pila = pila.substring(0, pila.length() - 1);
@@ -186,5 +185,4 @@ public class Funcionalidad {
 		
 		compiladores.FrmMenu.getTxtPasos().setText(pila);
 	}
-
 }

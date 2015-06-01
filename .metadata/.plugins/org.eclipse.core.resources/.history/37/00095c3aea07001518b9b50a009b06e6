@@ -53,7 +53,6 @@ public class FrmMenu extends JFrame {
 	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
-			@Override
 			public void run() {
 				try {
 					FrmMenu frame = new FrmMenu();
@@ -115,14 +114,11 @@ public class FrmMenu extends JFrame {
 		
 		setTxtPasos(new JTextField());
 		getTxtPasos().setFont(new Font("Comic Sans MS", Font.PLAIN, 15));
-		getTxtPasos().setEnabled(false);
-		getTxtPasos().setEditable(false);
 		panel.add(getTxtPasos());
 		getTxtPasos().setColumns(10);
 		
 		JButton btnValidar = new JButton("Validar");
 		btnValidar.addActionListener(new ActionListener() {
-			@Override
 			public void actionPerformed(ActionEvent e) {
 				try {
 					compiladores.Funcionalidad.analizador();
@@ -146,7 +142,6 @@ public class FrmMenu extends JFrame {
 		
 		JButton btnX = new JButton("X");
 		btnX.addActionListener(new ActionListener() {
-			@Override
 			public void actionPerformed(ActionEvent e) {
 		
 			}
@@ -157,7 +152,6 @@ public class FrmMenu extends JFrame {
 		
 		JButton btnLimpiar = new JButton("Limpiar");
 		btnLimpiar.addActionListener(new ActionListener() {
-			@Override
 			public void actionPerformed(ActionEvent e) {
 			}
 		});

@@ -115,8 +115,6 @@ public class FrmMenu extends JFrame {
 		
 		setTxtPasos(new JTextField());
 		getTxtPasos().setFont(new Font("Comic Sans MS", Font.PLAIN, 15));
-		getTxtPasos().setEnabled(false);
-		getTxtPasos().setEditable(false);
 		panel.add(getTxtPasos());
 		getTxtPasos().setColumns(10);
 		

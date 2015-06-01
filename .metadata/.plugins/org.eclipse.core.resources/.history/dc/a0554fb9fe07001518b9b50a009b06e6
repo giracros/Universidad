@@ -9,17 +9,33 @@ public class Funcionalidad {
 	
 	public static String pila = "ɅS";
 	
-
+	public static void aceptacion(String cadena) 
+	{
+		compiladores.FrmMenu.getTxtResultado().setText("Aceptacion");
+	}
+	
 	public static void analizador() throws IOException{
 		
-		String[] spl;
-		String l1 = "";
+		String[] spl; // valida que haya identificador variables Iv (se ve mas adelante)
+		String l1 = ""; // guarda los tokens de la cadena para validarlo con los simbolos de la pila
 		String cadena=compiladores.FrmMenu.getTxtValidar().getText();
+		@SuppressWarnings("unused")
 		int tamano=cadena.length();
-		cadena = cadena.substring(0).replace(" ", "");
-		spl = cadena.split("=");
-		if (spl.length < 2) {compiladores.FrmMenu.getTxtResultado().setText("Rechazo");return;}
-		else { while (k < cadena.length()) {
+		cadena = cadena.substring(0).replace(" ", ""); // Esto quita los espacios que se vayan por accidente en la cadena, ya que
+		
+		spl = cadena.split("="); // separa la cadena cuando encuentre el primero igual
+
+		// Valida que si haya identificador variables en caso de que el tamaño del vector spl sea menor que 2 quiere decir que no hay igual (=) //
+		
+		if (spl.length < 2) 
+		{
+			compiladores.FrmMenu.getTxtResultado().setText("Rechazo");
+			return;
+		} else {
+			
+// ----------------------------------------------------------------------------------------------------------------------------------//
+			
+			while (k < cadena.length()) {
 				
 				l1 = "" + cadena.charAt(k);
 				
@@ -145,11 +161,6 @@ public class Funcionalidad {
 		compiladores.FrmMenu.getTxtPasos().setText(pila);
 	}
 
-	public static void aceptacion(String cadena) 
-	{
-		compiladores.FrmMenu.getTxtResultado().setText("Aceptacion");
-	}
-	
 	public static void desapileR() 
 	{
 		pila = pila.substring(0, pila.length() - 1);
@@ -186,5 +197,4 @@ public class Funcionalidad {
 		
 		compiladores.FrmMenu.getTxtPasos().setText(pila);
 	}
-
 }
