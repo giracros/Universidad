@@ -148,7 +148,7 @@ public class FrmMenu extends JFrame {
 		btnX.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-		
+				System.exit(0);
 			}
 		});
 		btnX.setFont(new Font("Comic Sans MS", Font.PLAIN, 14));
@@ -159,6 +159,7 @@ public class FrmMenu extends JFrame {
 		btnLimpiar.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				txtValidar.setText("");
 			}
 		});
 		btnLimpiar.setFont(new Font("Comic Sans MS", Font.PLAIN, 15));
