@@ -1,6 +1,4 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <servers>
-  <server auto-publish-setting="1" glassfish.adminname="admin" glassfish.adminpassword="admin" glassfish.adminserverportnumber="4848" glassfish.debugport="8087" glassfish.domainpath="/Applications/NetBeans/glassfish-4.1/glassfish/domains/domain1" glassfish.jarDeploy="true" glassfish.keepSessions="true" glassfish.serverportnumber="8080" glassfish.useAnonymousConnection="true" hostname="localhost" id="GlassFish 4 at localhost [domain1]" name="GlassFish 4 at localhost [domain1]" runtime-id="GlassFish 4" server-type="org.glassfish.jst.server.glassfish4" server-type-id="org.glassfish.jst.server.glassfish4" start-timeout="240" stop-timeout="240" timestamp="2">
-    <list key="modules" value0="Book::org.eclipse.jst.jee.server:Book::jst.web::3.1"/>
-  </server>
+  <server auto-publish-setting="2" glassfish.adminname="admin" glassfish.adminserverportnumber="4848" glassfish.domainpath="/Users/danielfuentes/GlassFish/glassfish/domains/domain1" glassfish.jarDeploy="false" glassfish.keepSessions="true" glassfish.serverportnumber="8080" glassfish.useAnonymousConnection="true" hostname="localhost" id="GlassFish 4 at localhost [domain1]" name="GlassFishQ" runtime-id="GlassFish 4" server-type="org.glassfish.jst.server.glassfish4" server-type-id="org.glassfish.jst.server.glassfish4" start-timeout="360" stop-timeout="240" timestamp="6"/>
 </servers>
